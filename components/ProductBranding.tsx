@@ -4,34 +4,35 @@ interface ProductBrandingProps {
   category: string;
   productName: string;
   className?: string;
+  size?: 'sm' | 'md';
 }
 
-const BrandingContent = ({ title, subtitle }: { title: string, subtitle: string }) => (
-    <div className="text-center p-4">
-        <p className="text-sm font-light text-eskada-light-green tracking-widest uppercase">{subtitle}</p>
-        <h3 className="text-3xl font-bold text-eskada-gold tracking-wider my-1">ESKADA</h3>
-        <p className="text-xl font-semibold text-eskada-green uppercase">{title}</p>
+const BrandingContent = ({ title, subtitle, size }: { title: string, subtitle: string, size: 'sm' | 'md' }) => (
+    <div className={`text-center flex flex-col justify-center h-full ${size === 'sm' ? 'p-1' : 'p-4'}`}>
+        <p className={`font-light text-eskada-light-green tracking-wide uppercase ${size === 'sm' ? 'text-[0.5rem] leading-tight' : 'text-sm'}`}>{subtitle}</p>
+        <h3 className={`font-bold text-eskada-gold tracking-wider ${size === 'sm' ? 'text-xl my-0.5' : 'text-3xl my-1'}`}>ESKADA</h3>
+        <p className={`font-semibold text-eskada-green uppercase ${size === 'sm' ? 'text-[0.6rem] leading-tight break-words' : 'text-xl'}`}>{title}</p>
     </div>
 );
 
-const ProductBranding: React.FC<ProductBrandingProps> = ({ category, productName, className }) => {
+const ProductBranding: React.FC<ProductBrandingProps> = ({ category, productName, className, size = 'md' }) => {
   const getBranding = () => {
     // Use the specific product name, removing unit specifiers like (per kg) for a cleaner look.
     const formattedProductName = productName.split('(')[0].trim();
 
     switch (category) {
       case 'fish':
-        return <BrandingContent subtitle="Premium Quality" title={formattedProductName} />;
+        return <BrandingContent size={size} subtitle="Premium Quality" title={formattedProductName} />;
       case 'palm':
-        return <BrandingContent subtitle="Pure & Unadulterated" title={formattedProductName} />;
+        return <BrandingContent size={size} subtitle="Pure & Unadulterated" title={formattedProductName} />;
       case 'fruits':
-        return <BrandingContent subtitle="Harvested Fresh" title={formattedProductName} />;
+        return <BrandingContent size={size} subtitle="Harvested Fresh" title={formattedProductName} />;
       case 'vegetables':
-        return <BrandingContent subtitle="Farm to Table" title={formattedProductName} />;
+        return <BrandingContent size={size} subtitle="Farm to Table" title={formattedProductName} />;
       case 'export':
-        return <BrandingContent subtitle="Global Standard" title={formattedProductName} />;
+        return <BrandingContent size={size} subtitle="Global Standard" title={formattedProductName} />;
       default:
-        return <BrandingContent subtitle="High Quality" title={formattedProductName} />;
+        return <BrandingContent size={size} subtitle="High Quality" title={formattedProductName} />;
     }
   };
 

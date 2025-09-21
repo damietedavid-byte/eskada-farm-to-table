@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { formatCurrency } from '../utils/helpers';
-import ProductImage from '../components/ProductImage';
+import ProductBranding from '../components/ProductBranding';
 import { OPayLogo, WhatsAppLogo } from '../assets/logos';
 
 const CheckoutPage: React.FC = () => {
@@ -25,8 +25,10 @@ const CheckoutPage: React.FC = () => {
             {cartItems.map(item => (
               <div key={item.id} className="flex items-center justify-between py-4 border-b last:border-b-0">
                 <div className="flex items-center space-x-4">
-                  <ProductImage
-                    product={item}
+                  <ProductBranding
+                    productName={item.name}
+                    category={item.category}
+                    size="sm"
                     className="w-20 h-20 rounded-md"
                   />
                   <div>

@@ -4,7 +4,7 @@ import { PRODUCTS } from '../constants';
 import NotFoundPage from './NotFoundPage';
 import { formatCurrency } from '../utils/helpers';
 import { useCart } from '../context/CartContext';
-import ProductImage from '../components/ProductImage';
+import ProductBranding from '../components/ProductBranding';
 
 const ProductDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -56,8 +56,9 @@ const ProductDetailPage: React.FC = () => {
       </script>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
-          <ProductImage
-            product={product}
+          <ProductBranding
+            productName={product.name}
+            category={product.category}
             className="w-full h-auto min-h-[300px] max-h-[500px] rounded-lg shadow-lg"
           />
         </div>
