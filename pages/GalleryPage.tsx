@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const GalleryPage: React.FC = () => {
+    
+  useEffect(() => {
+    document.title = "Gallery | Eskada Farms | Nigerian Agriculture in Action";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Explore the Eskada Farms gallery. See photos of our fresh catfish, palm oil production, vegetable harvests, and the heart of our Nigerian farm operations.');
+    }
+  }, []);
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-10">

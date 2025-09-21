@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-2xl font-bold text-eskada-gold tracking-wider mb-4">ESKADA</h3>
             <p className="text-gray-300">
-              Fresh farm products from Port Harcourt, Nigeria. Quality, integrity, and sustainability in every harvest.
+             Your trusted source for fresh farm products from Port Harcourt, Nigeria. We are leaders in Nigeria agriculture, committed to quality, integrity, and sustainability in every harvest. We also specialize in Nigerian food export.
             </p>
             <p className="text-gray-300 mt-2">Nationwide delivery available.</p>
           </div>
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Eskada. All Rights Reserved. Built with Passion.</p>
+          <p>&copy; {new Date().getFullYear()} Eskada Farms. All Rights Reserved. A Leader in Nigerian Agriculture.</p>
         </div>
       </div>
     </footer>

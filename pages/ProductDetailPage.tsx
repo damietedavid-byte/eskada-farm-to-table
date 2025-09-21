@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PRODUCTS } from '../constants';
 import NotFoundPage from './NotFoundPage';
-import ProductBranding from '../components/ProductBranding';
 import { formatCurrency } from '../utils/helpers';
 import { useCart } from '../context/CartContext';
+import ProductImage from '../components/ProductImage';
 
 const ProductDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { addToCart } = useCart();
   const product = PRODUCTS.find(p => p.slug === slug);
+
+  useEffect(() => {
+    if (product) {
+      document.title = `Buy ${product.name} | Eskada Farms | Nigerian Agriculture`;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', `${product.description} Order fresh ${product.name} online from Eskada Farms, your trusted Nigerian farmer in Port Harcourt.`);
+      }
+    }
+  }, [product]);
 
   if (!product) {
     return <NotFoundPage />;
@@ -20,7 +30,12 @@ const ProductDetailPage: React.FC = () => {
     "@type": "Product",
     "name": product.name,
     "description": product.description,
+    "image": product.imageUrl,
     "sku": product.id,
+    "brand": {
+        "@type": "Brand",
+        "name": "Eskada"
+    },
     "offers": {
       "@type": "Offer",
       "url": window.location.href,
@@ -29,7 +44,7 @@ const ProductDetailPage: React.FC = () => {
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",
-        "name": "Eskada"
+        "name": "Eskada Farms"
       }
     }
   };
@@ -41,9 +56,8 @@ const ProductDetailPage: React.FC = () => {
       </script>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
-          <ProductBranding
-            category={product.category}
-            productName={product.name}
+          <ProductImage
+            product={product}
             className="w-full h-auto min-h-[300px] max-h-[500px] rounded-lg shadow-lg"
           />
         </div>

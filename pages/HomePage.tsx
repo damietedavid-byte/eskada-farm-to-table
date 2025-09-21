@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { PRODUCTS, BLOG_POSTS, CATEGORIES } from '../constants';
@@ -11,9 +11,9 @@ const Hero = () => (
     >
         <div className="absolute inset-0 bg-black/50 z-0"></div>
         <div className="relative z-10 text-center px-4">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-tight">From Our Farm to Your Table</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-tight">Eskada Farms: Fresh Nigerian Farm Products</h1>
             <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8">
-                Experience the taste of freshness. We deliver premium quality farm products straight from Port Harcourt.
+                Experience the taste of freshness. We deliver premium quality farm products like catfish and palm oil straight from Port Harcourt. Your top choice for Nigeria agriculture and food export.
             </p>
             <Link to="/products" className="bg-eskada-gold text-eskada-green font-bold py-3 px-8 rounded-full text-lg hover:bg-yellow-400 transition-colors duration-300">
                 Shop Now
@@ -56,9 +56,9 @@ const ExportShowcase = () => (
     <div className="py-20 bg-eskada-green text-white">
         <div className="container mx-auto px-6 text-center">
             <FarmIcon className="w-16 h-16 mx-auto mb-4 text-eskada-gold"/>
-            <h2 className="text-4xl font-bold mb-4">Global Reach: Exporting Nigeria's Finest</h2>
+            <h2 className="text-4xl font-bold mb-4">Global Reach: Nigerian Food Export</h2>
             <p className="text-lg mb-8 max-w-3xl mx-auto">
-                We provide premium, export-grade agricultural products packaged to meet international standards. From processed catfish to pure palm oil, we are your trusted partner for bulk orders and global shipping.
+                We provide premium, export-grade agricultural products packaged to meet international standards. From processed catfish to pure palm oil, we are your trusted partner for Nigerian food export and bulk global shipping.
             </p>
             <Link to="/products/export" className="bg-eskada-gold text-eskada-green font-bold py-3 px-8 rounded-full text-lg hover:bg-yellow-400 transition-colors duration-300">
                 Explore Export Products
@@ -106,6 +106,14 @@ const BlogPreview = () => (
 );
 
 const HomePage: React.FC = () => {
+  useEffect(() => {
+    document.title = "Eskada Farms | Nigerian Farm Products, Catfish & Palm Oil Export";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Eskada Farms is a top Nigerian agribusiness in Port Harcourt, specializing in fresh catfish, pure palm oil, fruits, and vegetables. We offer Nigerian food export and expert agriculture consultation.');
+    }
+  }, []);
+
   return (
     <div>
       <Hero />

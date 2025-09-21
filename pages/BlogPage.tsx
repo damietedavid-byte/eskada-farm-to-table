@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BLOG_POSTS } from '../constants';
 import { ArticleIcon } from '../assets/CategoryIcons';
 
 const BlogPage: React.FC = () => {
+    
+  useEffect(() => {
+    document.title = "Blog | Nigeria Agriculture Insights | Eskada Farms";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Read the Eskada Farms blog for insights on Nigerian agriculture, sustainable farming, agribusiness tips, and stories from our farm in Port Harcourt.');
+    }
+  }, []);
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-12">

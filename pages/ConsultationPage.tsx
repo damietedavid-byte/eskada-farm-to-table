@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BusinessIcon } from '../assets/CategoryIcons';
 
 const ConsultationPage: React.FC = () => {
+    
+  useEffect(() => {
+    document.title = "Agribusiness Consultation in Nigeria | Eskada Farms";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Leverage 20+ years of experience with Eskada Farms\' consultation services. We guide agribusiness success and mediate in the oil & gas sector in Nigeria.');
+    }
+  }, []);
+
   return (
     <div className="bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
             <h1 className="text-4xl font-bold text-eskada-green mb-4">Business Consultation Services</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Leveraging over 20 years of experience in agribusiness and oil & gas mediation to drive your success.
+                Leveraging over 20 years of experience in Nigeria agriculture and oil & gas mediation to drive your success.
             </p>
         </div>
 
@@ -16,11 +25,11 @@ const ConsultationPage: React.FC = () => {
             <div className="space-y-6">
                 <h2 className="text-3xl font-semibold text-eskada-green">Our Expertise</h2>
                 <p className="text-gray-700 leading-relaxed">
-                    At Eskada, we offer more than just premium farm products. Our consultancy arm is built on a foundation of two decades of hands-on experience in Nigeria's complex business landscape. We specialize in providing strategic guidance for agribusiness ventures and expert mediation services for the oil and gas sector.
+                    At Eskada, we offer more than just premium farm products. Our consultancy arm is built on a foundation of two decades of hands-on experience in Nigeria's complex business landscape. We specialize in providing strategic guidance for agribusiness ventures and expert mediation services for the oil and gas sector, helping you achieve agribusiness success.
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-gray-700">
                     <li>Agribusiness Strategy & Market Entry</li>
-                    <li>Supply Chain Optimization</li>
+                    <li>Supply Chain Optimization in Nigeria Agriculture</li>
                     <li>Community Engagement & Mediation</li>
                     <li>Regulatory Compliance Advisory</li>
                     <li>Project Feasibility Studies</li>

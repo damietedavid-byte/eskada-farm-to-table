@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Product } from '../types';
 import { useCart } from '../context/CartContext';
 import { formatCurrency } from '../utils/helpers';
-import ProductBranding from './ProductBranding';
+import ProductImage from './ProductImage';
 
 interface ProductCardProps {
   product: Product;
@@ -15,9 +15,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden flex flex-col group transition-transform duration-300 hover:-translate-y-1">
       <Link to={`/product/${product.slug}`} className="block">
-        <ProductBranding
-          category={product.category}
-          productName={product.name}
+        <ProductImage
+          product={product}
           className="w-full h-48"
         />
       </Link>

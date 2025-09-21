@@ -5,6 +5,7 @@ export interface Product {
   category: string;
   price: number;
   description: string;
+  imageUrl: string;
 }
 
 export interface Category {
@@ -30,6 +31,6 @@ export interface CartItem extends Product {
 // FIX: Added GalleryImage interface for use in the Slideshow component.
 export interface GalleryImage {
   src: string;
-  title: string;
+  title:string;
   text: string;
 }

@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { PRODUCTS, CATEGORIES } from '../constants';
@@ -16,6 +15,16 @@ const ProductsPage: React.FC = () => {
     : PRODUCTS;
 
   const title = currentCategory ? currentCategory.name : 'All Products';
+  
+  useEffect(() => {
+    const pageTitle = `${title} | Eskada Farms`;
+    const pageDescription = `Browse and buy ${title.toLowerCase()} from Eskada Farms, a leading name in Nigeria agriculture. Fresh, high-quality farm produce delivered from Port Harcourt.`;
+    document.title = pageTitle;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', pageDescription);
+    }
+  }, [title]);
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">

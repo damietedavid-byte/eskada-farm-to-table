@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { BLOG_POSTS } from '../constants';
 import NotFoundPage from './NotFoundPage';
@@ -8,12 +8,45 @@ const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = BLOG_POSTS.find(p => p.slug === slug);
 
+  useEffect(() => {
+    if (post) {
+      document.title = `${post.title} | Eskada Farms Blog`;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', post.excerpt);
+      }
+    }
+  }, [post]);
+
   if (!post) {
     return <NotFoundPage />;
   }
+  
+  const postSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "author": {
+      "@type": "Person",
+      "name": post.author
+    },
+    "datePublished": new Date(post.date).toISOString(),
+    "description": post.excerpt,
+    "publisher": {
+        "@type": "Organization",
+        "name": "Eskada Farms",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://eskadafarms.com/favicon.ico"
+        }
+    }
+  };
 
   return (
     <div className="bg-white py-16">
+        <script type="application/ld+json">
+            {JSON.stringify(postSchema)}
+        </script>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
                 <header className="mb-8 text-center">
