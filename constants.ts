@@ -10,28 +10,26 @@ export const CATEGORIES: Category[] = [
 
 export const PRODUCTS: Product[] = [
   // Fish
-  { id: 'prod1', name: 'Live Catfish (per kg)', slug: 'live-catfish', category: 'fish', price: 4500, description: 'Fresh, live catfish directly from our sustainable farm ponds in Port Harcourt.', imageUrl: 'https://i.ibb.co/mH1m5XW/image-2.jpg' },
-  { id: 'prod2', name: 'Processed Catfish (500g)', slug: 'processed-catfish', category: 'fish', price: 5500, description: 'Expertly smoked and dried catfish, ready to elevate your soups and stews.', imageUrl: 'https://i.ibb.co/W2zM45y/image-20.jpg' },
+  { id: 'prod1', name: 'Live Catfish (per kg)', slug: 'live-catfish', category: 'fish', price: 3500, description: 'Fresh, live catfish directly from our sustainable farm ponds in Port Harcourt.', imageUrl: 'https://i.ibb.co/mH1m5XW/image-2.jpg' },
+  { id: 'prod2', name: 'Dry/processed Catfish (per kg)', slug: 'processed-catfish', category: 'fish', price: 7500, description: 'Expertly smoked and dried catfish, ready to elevate your soups and stews.', imageUrl: 'https://i.ibb.co/W2zM45y/image-20.jpg' },
   
   // Palm Products
-  { id: 'prod3', name: 'Palm Oil (1 Litre)', slug: 'palm-oil', category: 'palm', price: 2500, description: 'Pure, unadulterated red palm oil, rich in vitamins and authentic flavor.', imageUrl: 'https://i.ibb.co/VMyXpgr/image-3.jpg' },
-  { id: 'prod4', name: 'Palm Kernel (Basket)', slug: 'palm-kernel', category: 'palm', price: 1500, description: 'High-quality palm kernels for oil extraction or traditional uses.', imageUrl: 'https://i.ibb.co/z5p5823/image-4.jpg' },
-  { id: 'prod5', name: 'Palm Kernel Oil (500ml)', slug: 'palm-kernel-oil', category: 'palm', price: 2000, description: 'Cold-pressed palm kernel oil, perfect for cooking and skincare.', imageUrl: 'https://i.ibb.co/M7Q28Wk/image-17.jpg' },
+  { id: 'prod3', name: 'Palm Oil (1 Litre)', slug: 'palm-oil', category: 'palm', price: 2300, description: 'Pure, unadulterated red palm oil, rich in vitamins and authentic flavor.', imageUrl: 'https://i.ibb.co/VMyXpgr/image-3.jpg' },
+  { id: 'prod4', name: 'Processed Palm Kernel (custard bucket)', slug: 'processed-palm-kernel', category: 'palm', price: 5800, description: 'High-quality processed palm kernels for oil extraction or traditional uses.', imageUrl: 'https://i.ibb.co/z5p5823/image-4.jpg' },
+  { id: 'prod5', name: 'Palm Kernel Oil (Black, 1 Litre)', slug: 'palm-kernel-oil-black', category: 'palm', price: 5500, description: 'Traditional black palm kernel oil, perfect for cooking and skincare.', imageUrl: 'https://i.ibb.co/M7Q28Wk/image-17.jpg' },
+  { id: 'prod19', name: 'Palm Kernel Oil (Yellow, 1 Litre)', slug: 'palm-kernel-oil-yellow', category: 'palm', price: 9509, description: 'Cold-pressed yellow palm kernel oil, ideal for various culinary and cosmetic applications.', imageUrl: 'https://i.ibb.co/M7Q28Wk/image-17.jpg' },
 
   // Fruits
-  { id: 'prod6', name: 'Pineapple (Large)', slug: 'pineapple', category: 'fruits', price: 1800, description: 'Sweet and juicy pineapples, harvested at peak ripeness.', imageUrl: 'https://i.ibb.co/0V8gS3G/image-9.jpg' },
-  { id: 'prod7', name: 'Pawpaw (per kg)', slug: 'pawpaw', category: 'fruits', price: 1200, description: 'Delicious and nutritious pawpaw, grown with care on our farm.', imageUrl: 'https://i.ibb.co/dKq2ZPg/image-16.jpg' },
-  { id: 'prod8', name: 'Guavas (Bunch)', slug: 'guavas', category: 'fruits', price: 900, description: 'Aromatic and sweet guavas, packed with Vitamin C.', imageUrl: 'https://i.ibb.co/hL4zWcv/image-15.jpg' },
+  { id: 'prod7', name: 'Papaya (Large)', slug: 'papaya-large', category: 'fruits', price: 1000, description: 'Delicious and nutritious large pawpaw, grown with care on our farm.', imageUrl: 'https://i.ibb.co/dKq2ZPg/image-16.jpg' },
+  { id: 'prod20', name: 'Papaya (Medium)', slug: 'papaya-medium', category: 'fruits', price: 500, description: 'Sweet and healthy medium-sized pawpaw, perfect for a refreshing snack.', imageUrl: 'https://i.ibb.co/dKq2ZPg/image-16.jpg' },
 
   // Vegetables
-  { id: 'prod9', name: 'Onions (Bag)', slug: 'onions', category: 'vegetables', price: 2200, description: 'Fresh, pungent onions, a staple for any Nigerian kitchen.', imageUrl: 'https://i.ibb.co/zJ3Jt2h/image-12.jpg' },
-  { id: 'prod10', name: 'Tomatoes (Basket)', slug: 'tomatoes', category: 'vegetables', price: 3500, description: 'Plump, red tomatoes bursting with flavor, perfect for stews and salads.', imageUrl: 'https://i.ibb.co/6Pqj4tX/image-18.jpg' },
-  { id: 'prod11', name: 'Okra (Heap)', slug: 'okra', category: 'vegetables', price: 700, description: 'Freshly picked okra for that perfect draw soup.', imageUrl: 'https://i.ibb.co/dGt0sYx/image-13.jpg' },
-  { id: 'prod12', name: 'Peppers (Small Basket)', slug: 'peppers', category: 'vegetables', price: 1500, description: 'A vibrant mix of fresh peppers to spice up your meals.', imageUrl: 'https://i.ibb.co/8D1Jk6W/image-10.jpg' },
-  { id: 'prod13', name: 'Carrots (Bunch)', slug: 'carrots', category: 'vegetables', price: 1000, description: 'Crisp and sweet carrots, straight from the farm.', imageUrl: 'https://i.ibb.co/rpxYtLp/image-8.jpg' },
-  { id: 'prod14', name: 'Melon / Egusi (Bowl)', slug: 'melon-egusi', category: 'vegetables', price: 2800, description: 'High-quality melon seeds (Egusi) for traditional Nigerian soups.', imageUrl: 'https://i.ibb.co/8YxJ7Z7/image-7.jpg' },
-  { id: 'prod15', name: 'Bitter Leaf (Washed)', slug: 'bitter-leaf', category: 'vegetables', price: 900, description: 'Fresh bitter leaf, washed and ready for cooking.', imageUrl: 'https://i.ibb.co/s5D6x8y/image-21.jpg' },
-  { id: 'prod16', name: 'Ewedu Leaves (Bunch)', slug: 'ewedu', category: 'vegetables', price: 500, description: 'Fresh Jute leaves (Ewedu) for a delicious, slimy soup.', imageUrl: 'https://i.ibb.co/M9K3f84/image-11.jpg' },
+  { id: 'prod9', name: 'Onions (custard bucket)', slug: 'onions-bucket', category: 'vegetables', price: 3500, description: 'A custard bucket full of fresh, pungent onions, a staple for any Nigerian kitchen.', imageUrl: 'https://i.ibb.co/zJ3Jt2h/image-12.jpg' },
+  { id: 'prod11', name: 'Okra (custard bucket)', slug: 'okra-bucket', category: 'vegetables', price: 4000, description: 'A custard bucket of freshly picked okra for that perfect draw soup.', imageUrl: 'https://i.ibb.co/dGt0sYx/image-13.jpg' },
+  { id: 'prod12', name: 'Pepper (custard bucket)', slug: 'pepper-bucket', category: 'vegetables', price: 4500, description: 'A custard bucket of vibrant, fresh peppers to spice up your meals.', imageUrl: 'https://i.ibb.co/8D1Jk6W/image-10.jpg' },
+  { id: 'prod15', name: 'Bitter Leaf (Fresh/Washed, custard bucket)', slug: 'bitter-leaf-fresh-bucket', category: 'vegetables', price: 4500, description: 'A custard bucket of fresh bitter leaf, washed and ready for cooking.', imageUrl: 'https://i.ibb.co/s5D6x8y/image-21.jpg' },
+  { id: 'prod21', name: 'Bitter Leaf (Dried, custard bucket)', slug: 'bitter-leaf-dried-bucket', category: 'vegetables', price: 7500, description: 'A custard bucket of dried bitter leaf, preserving its unique flavor for your traditional dishes.', imageUrl: 'https://i.ibb.co/s5D6x8y/image-21.jpg' },
+  { id: 'prod22', name: 'Sweet Potatoes (Red/White, custard bucket)', slug: 'sweet-potatoes-bucket', category: 'vegetables', price: 3000, description: 'A custard bucket of versatile and nutritious sweet potatoes, available in red or white varieties.', imageUrl: 'https://i.ibb.co/C0bVw9s/image.png' },
 
   // Export
   { id: 'prod17', name: 'Bulk Processed Catfish (Export Grade)', slug: 'export-catfish', category: 'export', price: 500000, description: 'Premium, processed catfish packaged for international export. Contact us for bulk pricing and logistics.', imageUrl: 'https://i.ibb.co/W2zM45y/image-20.jpg' },
